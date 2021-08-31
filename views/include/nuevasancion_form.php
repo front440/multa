@@ -1,0 +1,42 @@
+<?php
+// echo "<form action=\"http://localhost/multas/public/index.php/multa/list\" method=\"post\">";
+echo "<form action=\"http://localhost/multas/public/index.php/nuevasancion\" method=\"post\">";
+echo "<label for=\"id_agente\">id_agenteMulta";
+echo "<input type=\"text\" name=\"id_agente\" placeholder=\"id_agente\" value=\"" . $_SESSION["id_agente"] . "\" readonly>";
+echo "</label>";
+echo "<br>";
+echo "<label for=\"id_conductor\">Conductor</label>";
+echo "<select name=\"id_conductor\" >";
+foreach ($data as $key => $value) {
+    echo "<option value=\"" . $value["id"] . "\">" . $value["nombre"] . "</option>";
+}
+echo "</select>";
+echo "<br>";
+echo "<label for=\"matricula\">Matrícula";
+echo "<input type=\"text\" name=\"matricula\" placeholder=\"matricula\">";
+echo "</label>";
+echo "<br>";
+echo "<label for=\"id_tipo_sanciones\">Tipo de infraccion";
+echo " Leve<input type=\"radio\" value=\"1\" name=\"id_tipo_sanciones\">";
+echo "Grave<input type=\"radio\" value=\"2\" name=\"id_tipo_sanciones\">";
+echo "Muy Grave<input type=\"radio\" value=\"3\" name=\"id_tipo_sanciones\">";
+echo "</label>";
+echo "<br>";
+echo "<label for=\"descripcion\">Descripción";
+echo "<input type=\"text\" name=\"descripcion\" placeholder=\"descripcion\">";
+echo "</label>";
+echo "<br>";
+echo "<label for=\"fecha\">Fecha";
+echo "<input type=\"text\" name=\"fecha\" placeholder=\"fecha\">";
+echo "</label>";
+echo "<br>";
+echo "<label for=\"importe\">Importe";
+echo "<input type=\"text\" name=\"importe\" placeholder=\"importe\">";
+echo "</label>";
+echo "<br>";
+echo "<label for=\"descuento\">Decuento";
+echo "<input type=\"text\" name=\"descuento\" placeholder=\"descuento\">";
+echo "</label>";
+echo "<br>";
+echo "<input type=\"submit\" name=\"pagar\" value=\"pagar\">";
+echo "</form>";
